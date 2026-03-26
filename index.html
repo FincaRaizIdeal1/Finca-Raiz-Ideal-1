@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vina Manila Real Estate</title>
+<style>
+body, h1, h2, h3, p, ul, li, a, input, textarea, button { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+body { background-color:#fff; color:#333; line-height:1.6; }
+a { text-decoration:none; color:inherit; }
+ul { list-style:none; }
+
+/* Header con logo */
+header { background-color:#0077b5; color:#fff; padding:20px 0; text-align:center; display:flex; flex-direction:column; align-items:center; }
+header img { height:60px; margin-bottom:10px; }
+nav ul { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+nav ul li a { color:#fff; font-weight:bold; transition:0.3s; }
+nav ul li a:hover { text-decoration:underline; }
+
+section { padding:60px 20px; max-width:1000px; margin:auto; }
+h2 { color:#0077b5; margin-bottom:20px; text-align:center; }
+
+#home { text-align:center; }
+#home p { margin-top:20px; font-size:1.2em; }
+
+#valores ul { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+#valores ul li { background:#f0f8ff; padding:20px; border-radius:8px; width:220px; text-align:center; font-weight:bold; }
+
+.projects-nav { display:flex; justify-content:center; gap:10px; margin-bottom:30px; flex-wrap:wrap; }
+.projects-nav button { padding:10px 15px; border:none; border-radius:5px; background:#0077b5; color:#fff; cursor:pointer; transition:0.3s; }
+.projects-nav button.active { background:#005f87; }
+.projects-nav button:hover { background:#005f87; }
+
+.project-country { display:none; flex-wrap:wrap; gap:20px; justify-content:center; }
+.project-country.active { display:flex; }
+.project-card { border:1px solid #ddd; border-radius:8px; padding:15px; width:250px; background:#f9f9f9; transition:transform 0.3s; }
+.project-card:hover { transform:translateY(-5px); }
+.project-card img { width:100%; border-radius:5px; margin-bottom:10px; }
+.project-card h3 { color:#0077b5; margin-bottom:5px; }
+
+form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:auto; }
+input, select, textarea { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
+button.submit { background:#0077b5; color:#fff; padding:12px; border:none; border-radius:5px; cursor:pointer; font-weight:bold; transition:0.3s; }
+button.submit:hover { background:#005f87; }
+
+.whatsapp-float { position:fixed; bottom:20px; right:20px; background:#25d366; color:#fff; border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:30px; text-decoration:none; box-shadow:0 2px 5px rgba(0,0,0,0.3); transition:0.3s; }
+.whatsapp-float:hover { transform:scale(1.1); }
+</style>
+</head>
+<body>
+
+<header>
+<!-- Logo real: reemplaza la URL por tu logo -->
+<img src="https://via.placeholder.com/200x60/0077b5/ffffff?text=VM" alt="Vina Manila Logo">
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#valores">Valores</a></li>
+<li><a href="#proyectos">Proyectos</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+</header>
+
+<section id="home">
+<h2>Bienvenido a Vina Manila Real Estate</h2>
+<p>Expertos en proyectos de preconstrucción internacional en Miami, Panamá, República Dominicana, España y Colombia.</p>
+</section>
+
+<section id="valores">
+<h2>Nuestros Valores</h2>
+<ul>
+<li>Transparencia</li>
+<li>Calidad</li>
+<li>Confianza</li>
+<li>Experiencia Internacional</li>
+</ul>
+</section>
+
+<section id="proyectos">
+<h2>Proyectos</h2>
+<div class="projects-nav">
+<button class="active" onclick="showCountry('eeuu')">EEUU</button>
+<button onclick="showCountry('rd')">República Dominicana</button>
+<button onclick="showCountry('panama')">Panamá</button>
+<button onclick="showCountry('espana')">España</button>
+<button onclick="showCountry('colombia')">Colombia</button>
+</div>
+
+<div id="eeuu" class="project-country active">
+<div class="project-card">
+<img src="https://via.placeholder.com/250x150" alt="Torre Miami">
+<h3>Torre Miami</h3>
+<p>Preconstrucción de lujo en Miami, Florida.</p>
+</div>
+<div class="project-card">
+<img src="https://via.placeholder.com/250x150" alt="Residencias Coral Gables">
+<h3>Residencias Coral Gables</h3>
+<p>Condominio exclusivo en Coral Gables.</p>
+</div>
+</div>
+
+<div id="rd" class="project-country">
+<div class="project-card">
+<img src="https://via.placeholder.com/250x150" alt="Ocean View Punta Cana">
+<h3>Ocean View Punta Cana</h3>
+<p>Preconstrucción frente al mar.</p>
+</div>
+</div>
+
+<div id="panama" class="project-country">
+<div class="project-card">
+<img src="https://via.placeholder.com/250x150" alt="Torre Balboa">
+<h3>Torre Balboa</h3>
+<p>Viviendas modernas en Ciudad de Panamá.</p>
+</div>
+</div>
+
+<div id="espana" class="project-country">
+<div class="project-card">
+<img src="https://via.placeholder.com/250x150" alt="Costa del Sol Residences">
+<h3>Costa del Sol Residences</h3>
+<p>Preconstrucción de lujo en Marbella.</p>
+</div>
+<div class="project-card">
+<img src="https://via.placeholder.com/250x150" alt="Madrid Central">
+<h3>Madrid Central</h3>
+<p>Viviendas modernas en el centro de Madrid.</p>
+</div>
+</div>
+
+<div id="colombia" class="project-country">
+<div class="project-card">
+<img src="https://via.placeholder.com/250x150" alt="Torre Andina">
+<h3>Torre Andina</h3>
+<p>Preconstrucción en Bogotá.</p>
+</div>
+</div>
+</section>
+
+<section id="contacto">
+<h2>Contacto y Precalificación</h2>
+<form action="https://formspree.io/f/yourformid" method="POST">
+<input type="text" name="nombre" placeholder="Nombre completo" required>
+<input type="email" name="email" placeholder="Correo electrónico" required>
+<input type="tel" name="telefono" placeholder="Teléfono">
+<select name="pais_interes" required>
+<option value="">País de interés</option>
+<option value="eeuu">EEUU</option>
+<option value="rd">República Dominicana</option>
+<option value="panama">Panamá</option>
+<option value="espana">España</option>
+<option value="colombia">Colombia</option>
+</select>
+<select name="tipo_propiedad" required>
+<option value="">Tipo de propiedad</option>
+<option value="residencial">Residencial</option>
+<option value="comercial">Comercial</option>
+<option value="mixto">Mixto</option>
+</select>
+<input type="number" name="presupuesto" placeholder="Presupuesto aproximado (USD)" required>
+<select name="timeline" required>
+<option value="">Tiempo de inversión</option>
+<option value="0-6">0-6 meses</option>
+<option value="6-12">6-12 meses</option>
+<option value="12-24">12-24 meses</option>
+</select>
+<textarea name="mensaje" placeholder="Comentarios adicionales"></textarea>
+<button type="submit" class="submit">Enviar Solicitud</button>
+</form>
+</section>
+
+<a href="https://wa.me/1234567890" target="_blank" class="whatsapp-float"> </a>
+
+<script>
+function showCountry(country){
+const countries = ['eeuu','rd','panama','espana','colombia'];
+countries.forEach(c=>{
+document.getElementById(c).classList.remove('active');
+document.querySelector(`.projects-nav button[onclick="showCountry('${c}')"]`).classList.remove('active');
+});
+document.getElementById(country).classList.add('active');
+document.querySelector(`.projects-nav button[onclick="showCountry('${country}')"]`).classList.add('active');
+}
+</script>
+
+</body>
+</html>
+
+
